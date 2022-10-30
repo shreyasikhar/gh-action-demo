@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - main
+
+name: Create and push file
+jobs:
+  create-and-push-file:
+    name: Create and push file
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Create and push file
+      uses: './'
+      env:
+        USER_NAME: example
+        USER_EMAIL: example@nouser.(none)
+        BRANCH_NAME: code-push-example
+        COMMIT_MESSAGE: "Action add file"
