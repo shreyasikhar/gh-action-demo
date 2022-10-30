@@ -1,0 +1,1 @@
+First Linux Kernel, version 0.01, had just 10,239 lines of code (Source: Wikipedia)

@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - main
+
+name: Variables and Repository
+jobs:
+  variables-and-repository:
+    name: print variables and list repository content
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Printing variables and repository content
+      uses: './'
+      env: # Define environment vars
+        # variable_name: value
+        user_name: Shreyas Ikhar
+        wporg_url: https://profiles.wordpress.org/shreyasikhar26/
