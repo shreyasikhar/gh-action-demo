@@ -13,7 +13,7 @@ jobs:
     - name: Create and push file
       uses: './'
       env:
-        USER_NAME: example
-        USER_EMAIL: example@nouser.(none)
+        USER_NAME: shreyasikhar
+        USER_EMAIL: shreyasikhar26@gmail.com
         BRANCH_NAME: code-push-example
         COMMIT_MESSAGE: "Action add file"
