@@ -16,3 +16,4 @@ jobs:
         # variable_name: value
         user_name: Shreyas Ikhar
         wporg_url: https://profiles.wordpress.org/shreyasikhar26/
+        GH_secret: ${{ secrets.MY_FIRST_SECRET }}
