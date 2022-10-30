@@ -1,0 +1,14 @@
+on:
+  push: # Run this action when push event triggers.
+    branches: # Run this action on specified branches
+      - master # Branch name
+
+name: Hello World # Name of the action
+jobs:
+  Hello-World:
+    name: Print Hello World #
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Printing Hello World
+      uses: './' # Location of Dockerfile
