@@ -16,9 +16,11 @@ echo $GH_secret
 
 # Install git
 # Ubuntu container by default do not have git installed.
+echo "Install git"
 apt update && apt install git -y
 
 # Add git config
+echo "Set Git configs"
 git config --global user.name "$USER_NAME"
 git config --global user.email "$USER_EMAIL"
 
