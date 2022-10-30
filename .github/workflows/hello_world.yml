@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Printing Hello World
-      uses: './' # Location of Dockerfile
+      uses: './../' # Location of Dockerfile
