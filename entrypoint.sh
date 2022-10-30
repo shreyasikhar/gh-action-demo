@@ -23,6 +23,7 @@ apt update && apt install git -y
 echo "Set Git configs"
 git config --global user.name "$USER_NAME"
 git config --global user.email "$USER_EMAIL"
+git config --global --add safe.directory /github/workspace
 
 cd $GITHUB_WORKSPACE
 
