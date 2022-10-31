@@ -27,6 +27,9 @@ git config --global --add safe.directory /github/workspace
 
 cd $GITHUB_WORKSPACE
 
+# Get the latest changes first on default branch
+git pull
+
 # Checkout branch name based on Variable provided in workflow
 git checkout -b $BRANCH_NAME
 
