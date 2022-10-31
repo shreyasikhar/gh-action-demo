@@ -16,11 +16,11 @@ echo $GH_secret
 
 # Install git
 # Ubuntu container by default do not have git installed.
-echo "Install git"
+echo "Install git..."
 apt update && apt install git -y
 
 # Add git config
-echo "Set Git configs"
+echo "Set Git configs..."
 git config --global user.name "$USER_NAME"
 git config --global user.email "$USER_EMAIL"
 git config --global --add safe.directory /github/workspace
@@ -28,13 +28,17 @@ git config --global --add safe.directory /github/workspace
 cd $GITHUB_WORKSPACE
 
 # Get the latest changes first on default branch
+echo "Pulling the default branch..."
 git pull
 
-# Checkout branch name based on Variable provided in workflow
-git checkout -b $BRANCH_NAME
+# Delete the branch if exists
+echo "Deleting the '$BRANCH_NAME' branch if exists..."
+git branch -D $BRANCH_NAME
+git push origin --delete $BRANCH_NAME
 
-# Get the latest changes first
-git pull origin $BRANCH_NAME
+# Checkout branch name based on Variable provided in workflow
+echo "Checking out to new branch..."
+git checkout -b $BRANCH_NAME
 
 # Create example.txt
 touch "example.txt"
@@ -46,7 +50,9 @@ echo "You are doing awesome !" > example.txt
 git add .
 
 # Commit message
+echo "Committing the changes..."
 git commit -m "$COMMIT_MESSAGE"
 
 # Push the code
+echo "Pushing the code..."
 git push origin $BRANCH_NAME
