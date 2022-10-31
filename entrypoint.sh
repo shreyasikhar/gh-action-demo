@@ -27,14 +27,17 @@ git config --global --add safe.directory /github/workspace
 
 cd $GITHUB_WORKSPACE
 
+# Checkout branch name based on Variable provided in workflow
+git checkout -b $BRANCH_NAME
+
+# Get the latest changes first
+git pull origin $BRANCH_NAME
+
 # Create example.txt
 touch "example.txt"
 
 # Put some content in example.txt
 echo "You are doing awesome !" > example.txt
-
-# Checkout branch name based on Variable provided in workflow
-git checkout -b $BRANCH_NAME
 
 # Stage files and changes
 git add .
